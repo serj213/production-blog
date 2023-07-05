@@ -8,7 +8,7 @@ import { IBuildOptions } from "./types/config";
 export function buildConfiguration(
   options: IBuildOptions
 ): Configuration {
-  const { mode, paths } = options;
+  const { mode, paths, isDev } = options;
   return {
     mode,
     entry: paths.entry,
@@ -19,10 +19,10 @@ export function buildConfiguration(
     },
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(),
-    devtool: "inline-source-map",
-    devServer: buildDevServer(options)
+    devtool: isDev ? "inline-source-map" : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined
   };
 }
