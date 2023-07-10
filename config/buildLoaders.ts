@@ -3,7 +3,6 @@ import webpack from "webpack";
 import { IBuildOptions } from "./types/config";
 
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
-  console.log('options.isDev ', options.isDev);
   
   const scssLoader = {
     test: /\.s[ac]ss$/i,
