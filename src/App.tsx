@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { MainPageAsync } from "./pages/MainPage/MainPage.async";
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
 import { Suspense, useState } from "react";
-import { ETheme } from "./theme/ThemeContext";
+import { classNames } from "./helpers/classNames/classNames";
 import { useTheme } from "./theme/useTheme";
 
 
@@ -14,11 +14,8 @@ export const App = () => {
 
   const {theme, toggleTheme} = useTheme()
 
-  
-
-
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames('app', {hover:true, select:false}, [theme])}>
       <Suspense fallback={<div>Loading...</div>}>
         <Link to="/">Main page</Link>
         <Link to="/about">about page</Link>
