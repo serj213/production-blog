@@ -1,12 +1,12 @@
-import "./app.scss";
+import "./styles/app.scss";
 import { Route, Routes } from "react-router-dom";
-import AboutPage from "./pages/AboutPage/AboutPage";
+import AboutPage from "pages/AboutPage/ui/AboutPage";
 import { Link } from "react-router-dom";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
-import { Suspense, useState } from "react";
-import { classNames } from "./helpers/classNames/classNames";
-import { useTheme } from "./theme/useTheme";
+import { Suspense } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTheme } from "app/providers/ThemeProvider/lib/useTheme";
+import { MainPage } from "pages/MainPage";
+
 
 
 
@@ -23,8 +23,8 @@ export const App = () => {
           toggle
         </button>
         <Routes>
-          <Route path="/" element={<MainPageAsync />} />
-          <Route path="/about" element={<AboutPageAsync />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>
     </div>
