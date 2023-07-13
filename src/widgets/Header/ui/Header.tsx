@@ -10,6 +10,7 @@ interface IHeaderProps {}
 export const Header = (props: IHeaderProps) => {
   return (
     <header className={classNames(cls.header, {}, [])}>
+        
       <DarkIcon />
       <div className={cls.links}>
         <AppLink theme={EThemeLink.INVERTED_PRIMARY} to="/">
