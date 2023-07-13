@@ -14,21 +14,13 @@ import { Header } from "widgets/Header";
 
 export const App = () => {
 
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={classNames('app', {hover:true, select:false}, [theme])}>
       <Suspense fallback={<div>Loading...</div>}>
         <Header />
-        
-        <button onClick={toggleTheme}>
-          toggle
-        </button>
         <AppRouter />
-        {/* <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes> */}
       </Suspense>
     </div>
   );
