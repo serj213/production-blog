@@ -9,5 +9,12 @@
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
+  // Размеры 
+
   --headerHeight: 80px;
+  
+  --sidebar-collapsed: 80px;
+
+  --sidebar-uncollapsed: 300px;
+
 }

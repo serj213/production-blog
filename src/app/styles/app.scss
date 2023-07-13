@@ -11,3 +11,15 @@
     background: var(--bg-color);
     
 }
+
+.content-page{
+    display: flex;
+}
+
+.content-wrapper{
+    flex-grow: 1;
+}
+
+.content-wrapper{
+    padding: 15px;
+}

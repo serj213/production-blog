@@ -12,7 +12,7 @@ export const Header = (props: IHeaderProps) => {
   return (
     <header className={classNames(cls.header, {}, [])}>
         
-      <ThemeSwitchers />
+      <div></div>
       <div className={cls.links}>
         <AppLink theme={EThemeLink.INVERTED_PRIMARY} to="/">
           Main
