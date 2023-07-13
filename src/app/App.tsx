@@ -7,6 +7,7 @@ import { useTheme } from "app/providers/ThemeProvider/lib/useTheme";
 import { MainPage } from "pages/MainPage";
 import { AboutPage } from "pages/AboutPage";
 import { AppRouter } from "app/providers/router";
+import { Header } from "widgets/Header";
 
 
 
@@ -18,8 +19,7 @@ export const App = () => {
   return (
     <div className={classNames('app', {hover:true, select:false}, [theme])}>
       <Suspense fallback={<div>Loading...</div>}>
-        <Link to="/">Main page</Link>
-        <Link to="/about">about page</Link>
+        <Header />
         <button onClick={toggleTheme}>
           toggle
         </button>
