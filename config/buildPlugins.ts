@@ -7,7 +7,7 @@ import { IBuildOptions } from "./types/config";
 export function buildPlugins(
   options: IBuildOptions
 ): webpack.WebpackPluginInstance[] {
-  const { paths } = options;
+  const { paths, isDev } = options;
 
   return [
     new HtmlWebpackPlugin({
@@ -18,5 +18,11 @@ export function buildPlugins(
       filename: "css/[name][contenthash].css",
       chunkFilename: "css/[name][contenthash].css",
     }),
+    new webpack.DefinePlugin({
+      __isDev__:isDev
+    })
   ];
 }
+
+
+// разбиение переводов на чанки сделать и landSwicher добавить
