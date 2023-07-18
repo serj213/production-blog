@@ -21,7 +21,8 @@ export function buildPlugins (
     }),
     new webpack.DefinePlugin({
       __isDev__: isDev
-    })
+    }),
+    isDev && new ReactRefreshWebpackPlugin()
   ]
 }
 
