@@ -8,7 +8,7 @@ export const classNames = (
   return [
     cls,
     ...additional,
-    Object.entries(mods)
+    ...Object.entries(mods)
       .filter(([cls, value]) => Boolean(value))
       .map(([cls, value]) => cls)
   ].join(' ')

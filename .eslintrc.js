@@ -35,8 +35,8 @@ module.exports = {
         "@typescript-eslint/no-unsafe-member-access": "off",
         "@typescript-eslint/no-unsafe-argument": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/strict-boolean-expressions": "warn",
-        "@typescript-eslint/prefer-nullish-coalescing": "warn",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/prefer-nullish-coalescing": "off",
         "i18next/no-literal-string": ["error"]
     }
 }
