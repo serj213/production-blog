@@ -17,15 +17,10 @@ module.exports = {
                 ".eslintrc.{js,cjs},",
                 './**/*.{ts,tsx}'
             ],
-            parserOptions: {
-                sourceType: "script",
-                project: [
-                    './tsconfig.json',
-                  ],
-            }
         },
         
     ],
+    parserOptions: { project: ['tsconfig.json'] },
     plugins: [
         "react"
     ],
