@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "shared/ui/Button/Button";
-import { LangSwithers } from "widgets/LangSwitchers";
-import { ThemeSwitchers } from "widgets/ThemeSwitchers";
+import React, { useState } from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Button } from 'shared/ui/Button/Button'
+import { LangSwithers } from 'widgets/LangSwitchers'
+import { ThemeSwitchers } from 'widgets/ThemeSwitchers'
 
-import cls from "./Sidebar.module.scss";
+import cls from './Sidebar.module.scss'
 
 interface ISidebarProps {
-  className?: string;
+  className?: string
 }
 
 export const Sidebar = (props: ISidebarProps) => {
-  const { className } = props;
-  const [collapsed, setCollapsed] = useState(false);
+  const { className } = props
+  const [collapsed, setCollapsed] = useState(false)
 
   const onToggleCollapsed = () => {
-    setCollapsed((prev) => !prev);
-  };
+    setCollapsed((prev) => !prev)
+  }
 
   return (
     <aside
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className,
+        className
       ])}
     >
       <div>
@@ -33,5 +33,5 @@ export const Sidebar = (props: ISidebarProps) => {
         <LangSwithers />
       </div>
     </aside>
-  );
-};
+  )
+}

@@ -1,22 +1,22 @@
-import webpack from "webpack";
+import webpack from 'webpack'
 
-export type TBuildMode = "development" | "production";
+export type TBuildMode = 'development' | 'production'
 
-export interface IBuildEnv{
-  mode: TBuildMode,
+export interface IBuildEnv {
+  mode: TBuildMode
   port: number
 }
 
 export interface IBuildPath {
-  entry: string;
-  build: string;
-  html: string;
-  src:string
+  entry: string
+  build: string
+  html: string
+  src: string
 }
 
 export interface IBuildOptions {
-  mode: TBuildMode;
-  paths: IBuildPath;
-  port: number;
+  mode: TBuildMode
+  paths: IBuildPath
+  port: number
   isDev: boolean
 }
