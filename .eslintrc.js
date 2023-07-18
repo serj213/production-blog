@@ -6,7 +6,8 @@ module.exports = {
     extends: [
         "standard-with-typescript",
         "plugin:react/recommended",
-        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        "plugin:i18next/recommended"
     ],
     overrides: [
         {
@@ -22,7 +23,8 @@ module.exports = {
     ],
     parserOptions: { project: ['tsconfig.json'] },
     plugins: [
-        "react"
+        "react",
+        "i18next"
     ],
     rules: {
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -34,6 +36,7 @@ module.exports = {
         "@typescript-eslint/no-unsafe-argument": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/strict-boolean-expressions": "warn",
-        "@typescript-eslint/prefer-nullish-coalescing": "warn"
+        "@typescript-eslint/prefer-nullish-coalescing": "warn",
+        "i18next/no-literal-string": ["error"]
     }
 }

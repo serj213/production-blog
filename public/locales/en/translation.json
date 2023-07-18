@@ -4,5 +4,6 @@
     "HeaderNav": {
         "главная": "Home",
         "о нас": "About"
-    }
+    },
+    "toggle":"toggle"
 }
