@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button/Button'
-import cls from './LangSwithers.module.scss'
 
 export const LangSwithers = () => {
   const { t, i18n } = useTranslation()
