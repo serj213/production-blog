@@ -1,6 +1,5 @@
 import './styles/app.scss'
-import { Route, Routes, Link } from 'react-router-dom'
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme'
 import { AppRouter } from 'app/providers/router'

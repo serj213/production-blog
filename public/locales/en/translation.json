@@ -1,10 +1,12 @@
 {
-    "test":"test",
-    "перевод": "Ру",
-    "HeaderNav": {
-        "главная": "Home",
-        "о нас": "About"
-    },
-    "toggle":"toggle",
-    "страница не найдена": "Page not found"
+  "test": "test",
+  "перевод": "Ру",
+  "HeaderNav": {
+    "главная": "Home",
+    "о нас": "About"
+  },
+  "toggle": "toggle",
+  "страница не найдена": "Page not found",
+  "произошла ошибка": "Page error",
+  "обновить страницу": "Reload page"
 }
