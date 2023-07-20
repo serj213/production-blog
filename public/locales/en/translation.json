@@ -5,5 +5,6 @@
         "главная": "Home",
         "о нас": "About"
     },
-    "toggle":"toggle"
+    "toggle":"toggle",
+    "страница не найдена": "Page not found"
 }
