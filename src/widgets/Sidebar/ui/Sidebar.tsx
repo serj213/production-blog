@@ -23,12 +23,13 @@ export const Sidebar = (props: ISidebarProps) => {
 
   return (
     <aside
+      data-testid='sidebar'
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
         className
       ])}
     >
       <div>
-        <Button onClick={onToggleCollapsed}>
+        <Button data-testid='sidebar-toggle' onClick={onToggleCollapsed}>
           {
             t('toggle')
           }</Button>

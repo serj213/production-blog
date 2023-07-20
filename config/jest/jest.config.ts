@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest'
+import path from 'path'
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -18,13 +19,9 @@ const config: Config = {
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
-  coveragePathIgnorePatterns: [
-    '/node_modules/'
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 
-  moduleDirectories: [
-    'node_modules'
-  ],
+  moduleDirectories: ['node_modules', 'src'],
 
   moduleFileExtensions: [
     'js',
@@ -38,15 +35,20 @@ const config: Config = {
   ],
 
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: '../../'
+  rootDir: '../../',
+
+  setupFilesAfterEnv: ['<rootDir>config/jest/jestSetup.ts'],
+
+  moduleNameMapper: {
+    '\\.(scss)$': 'identity-obj-proxy',
+    '\\.svg': [path.resolve(__dirname, 'jestEmptySvg.tsx')]
+  }
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
