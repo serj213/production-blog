@@ -4,6 +4,7 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import webpack from 'webpack'
 import { type IBuildOptions } from './types/config'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export function buildPlugins (
   options: IBuildOptions
@@ -22,7 +23,10 @@ export function buildPlugins (
     new webpack.DefinePlugin({
       __isDev__: isDev
     }),
-    isDev && new ReactRefreshWebpackPlugin()
+    isDev && new ReactRefreshWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    })
   ]
 }
 
