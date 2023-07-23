@@ -1,8 +1,10 @@
-import { Loader } from 'shared/ui/Loader/Loader'
-import cls from './PageLoader.module.scss'
+import { Loader } from 'shared/ui/Loader/Loader';
+import cls from './PageLoader.module.scss';
 
-export const PageLoader = () => {
-  return <div className={cls.PageLoader}>
-    <Loader />
-  </div>
+export function PageLoader() {
+  return (
+    <div className={cls.PageLoader}>
+      <Loader />
+    </div>
+  );
 }

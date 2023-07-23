@@ -1,14 +1,16 @@
-import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui/Button/Button'
+import { useTranslation } from 'react-i18next';
+import { Button } from 'shared/ui/Button/Button';
 
-export const LangSwithers = () => {
-  const { t, i18n } = useTranslation()
+export function LangSwithers() {
+  const { t, i18n } = useTranslation();
 
   const toggleLaguage = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-  }
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+  };
 
-  return <Button onClick={toggleLaguage}>
-    {t('Перевод')}
-  </Button>
+  return (
+    <Button onClick={toggleLaguage}>
+      {t('Перевод')}
+    </Button>
+  );
 }

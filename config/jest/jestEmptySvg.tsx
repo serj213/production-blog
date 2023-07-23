@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const jestEmptySvg = () => {
-  return <div />
-}
+const jestEmptySvg = () => <div />;
 
-export default jestEmptySvg
+export default jestEmptySvg;

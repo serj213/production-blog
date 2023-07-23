@@ -1,3 +1,3 @@
-import { LangSwithers } from './ui/LangSwithers'
+import { LangSwithers } from './ui/LangSwithers';
 
-export { LangSwithers }
+export { LangSwithers };
