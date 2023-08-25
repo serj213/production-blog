@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwithers } from 'widgets/LangSwitchers';
 import { ThemeSwitchers } from 'widgets/ThemeSwitchers';
 
@@ -28,7 +28,7 @@ export function Sidebar(props: ISidebarProps) {
       ])}
     >
       <div>
-        <Button data-testid="sidebar-toggle" onClick={onToggleCollapsed}>
+        <Button theme={EButtonTheme.CLEAR_INVERTED} data-testid="sidebar-toggle" onClick={onToggleCollapsed}>
           {
             t('toggle')
           }

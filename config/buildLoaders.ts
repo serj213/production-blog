@@ -1,5 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type webpack from 'webpack';
+import { buildScssLoader } from './loaders/scssLoader';
+import { buildSVGLoader } from './loaders/svgLoader';
 import { type IBuildOptions } from './types/config';
 
 export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
@@ -29,33 +31,9 @@ export function buildLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  const svgLoader = {
-    test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
-    use: ['@svgr/webpack'],
-  };
+  const svgLoader = buildSVGLoader();
 
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      // Creates `style` nodes from JS strings
-      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            localIdentName: options.isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:5]',
-            auto: (resourcePath: string) => Boolean(resourcePath.includes('module')),
-          },
-        },
-      },
-      // Compiles Sass to CSS
-      'sass-loader',
-    ],
-  };
+  const scssLoader = buildScssLoader(options.isDev);
 
   const typescriptLoader = {
     test: /\.tsx?$/,

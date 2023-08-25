@@ -1,12 +1,22 @@
-.button{
+.button {
     display: inline-block;
-    color:var(--inverted-primary-color);
+    color: var(--primary-color);
     cursor: pointer;
 }
 
-.clear{
+.clear,
+.clear-inverted {
     margin: 0;
     padding: 0;
     background: transparent;
     border: none;
+}
+
+.clear-inverted{
+    color: var(--inverted-primary-color);
+}
+
+.outline {
+    border: 1px solid var(--primary-color);
+    padding: 10px;
 }
