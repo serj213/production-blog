@@ -3,13 +3,13 @@ import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { type RouteProps } from 'react-router-dom';
 
-enum ERoutePath {
+export enum ERoutePath {
   MAIN = 'main',
   ABOUT = 'about',
   NOT_FOUND = 'notFound'
 }
 
-const routerPath: Record<ERoutePath, string> = {
+export const routerPath: Record<ERoutePath, string> = {
   [ERoutePath.MAIN]: '/',
   [ERoutePath.ABOUT]: '/about',
   [ERoutePath.NOT_FOUND]: '*',

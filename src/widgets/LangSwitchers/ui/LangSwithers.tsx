@@ -1,8 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 
-export function LangSwithers() {
+export interface ILangSwithersProps {
+  short?:boolean
+}
+
+export const LangSwithers = (props:ILangSwithersProps) => {
   const { t, i18n } = useTranslation();
+  const { short } = props;
 
   const toggleLaguage = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -10,7 +15,7 @@ export function LangSwithers() {
 
   return (
     <Button theme={EButtonTheme.CLEAR_INVERTED} onClick={toggleLaguage}>
-      {t('Перевод')}
+      {short ? t('Короткий перевод') : t('Перевод')}
     </Button>
   );
-}
+};

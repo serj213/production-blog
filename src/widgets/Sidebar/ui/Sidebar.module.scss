@@ -7,9 +7,50 @@
     transition: width .3s ease-in;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__link{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        svg{
+            fill:var(--inverted-primary-color);
+            font-size: var(--font-size-l);
+        }
+
+        span{
+            margin-left: 15px;
+            font:var(--font-l);
+            transition: all .3s linear;
+        }
+    }
+}
+
 .collapsed{
     width: var(--sidebar-collapsed);
+
+    .menu{
+        &__link{
+            span{
+                opacity: 0;
+                width: 0;
+                transition: all .3s linear;
+            }
+        }
+    }
 }
+
+.collapsedBtn{
+    position: absolute;
+    right: -40px;
+    bottom: 40px;
+}
+
+
 
 .switchers{
     position: absolute;
